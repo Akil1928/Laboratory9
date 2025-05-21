@@ -36,7 +36,7 @@ public class BTree implements  Tree {
     private boolean bynarySearch(BTreeNode node, Object element) {
         if(node==null) return false;
         else if(util.Utility.compare(node.data, element) == 0) return true;
-        else
+        else return bynarySearch(node.left, element) || bynarySearch(node.right, element);
     }
 
     @Override
