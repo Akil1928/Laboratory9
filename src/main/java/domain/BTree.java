@@ -22,12 +22,21 @@ public class BTree implements  Tree {
 
     @Override
     public boolean isEmpty() {
+
         return root==null;
     }
 
     @Override
     public boolean contains(Object element) throws TreeException {
-        return false;
+        if(isEmpty())
+            throw new TreeException("Binary Tree is empty");
+        return bynarySearch(root, element);
+    }
+
+    private boolean bynarySearch(BTreeNode node, Object element) {
+        if(node==null) return false;
+        else if(util.Utility.compare(node.data, element) == 0) return true;
+        else
     }
 
     @Override

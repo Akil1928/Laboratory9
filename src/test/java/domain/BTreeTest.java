@@ -14,6 +14,11 @@ class BTreeTest {
         System.out.println(bTree);
         try {
             System.out.println("BTree size: "+bTree.size());
+            for (int i = 0; i < 20; i++) {
+                int value = util.Utility.random(50);
+                System.out.println(bTree.contains(value)+)
+
+            }
         } catch (TreeException e) {
             throw new RuntimeException(e);
         }
