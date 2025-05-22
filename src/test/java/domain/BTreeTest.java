@@ -13,14 +13,19 @@ class BTreeTest {
         }
         System.out.println(bTree);
         try {
-            System.out.println("BTree size: "+bTree.size());
+            System.out.println("BTree size: " + bTree.size());
             for (int i = 0; i < 20; i++) {
                 int value = util.Utility.random(50);
-                System.out.println(bTree.contains(value)+)
+                System.out.println(
+                        bTree.contains(value)
+                                ? "The value [" + value + "] exist in the binary tree"
+                                : "The value [" + value + "] does not in the binary tree"
 
+                );
             }
         } catch (TreeException e) {
             throw new RuntimeException(e);
         }
     }
+
 }

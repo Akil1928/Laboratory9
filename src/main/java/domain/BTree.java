@@ -71,6 +71,30 @@ public class BTree implements  Tree {
 
     @Override
     public void remove(Object element) throws TreeException {
+if(isEmpty())
+    throw new TreeException("Binary Tree is empty");
+root = remove(root, element);
+    }
+
+    private BTreeNode remove(BTreeNode node, Object element) {
+        if(node!=null){
+            if(util.Utility.compare(node.data, element) == 0){
+                if(node.left==null && node.right==null) return null;
+                else if ((node.left!=null && node.right == null)) {
+                    node.left = newPath(node.left, node.path);
+                    return node.left;
+
+                } else if (node.left==null&&node.right!=null) {
+                    node.right = newPath(node.right, node.path);
+                    return node.right;
+
+                }
+            }
+            return node;
+        }
+    }
+
+    private BTreeNode newPath(BTreeNode left, String path) {
 
     }
 
