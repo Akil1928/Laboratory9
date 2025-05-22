@@ -81,22 +81,51 @@ root = remove(root, element);
             if(util.Utility.compare(node.data, element) == 0){
                 if(node.left==null && node.right==null) return null;
                 else if ((node.left!=null && node.right == null)) {
-                    node.left = newPath(node.left, node.path);
+                    //node.left = newPath(node.left, node.path);
                     return node.left;
 
                 } else if (node.left==null&&node.right!=null) {
-                    node.right = newPath(node.right, node.path);
+                   // node.right = newPath(node.right, node.path);
                     return node.right;
 
+                } else if (node.left!=null&&node.right!=null) {
+                    //El algoritmo de supresion dice que cuando el nodo a suprimir tiene 2 hijos entonces busque una hoja
+                    //del subarbol derecho 
+                    Object value =getLeaf(node.right);
+                    node.data = value;
+                    node.right = removeLeaf(node.right , value);
+                    
                 }
             }
-            return node;
+            node.left = remove(node.left, element);//Llamado recursivo izquierda
+            node.right = remove(node.right, element);
         }
+        return node;
     }
 
-    private BTreeNode newPath(BTreeNode left, String path) {
-
+    private BTreeNode removeLeaf(BTreeNode node, Object value) {
+        if(node==null) return null;
+        else if(node.left==null&&node.right==null && util.Utility.compare(node.data, value)==0) return null;
+        else{
+            node.left = removeLeaf(node.left, value);
+            node.right = removeLeaf(node.right, value);
+        }
+        return node;
     }
+
+    private Object getLeaf(BTreeNode node) {
+        Object aux;
+        if(node==null) return null;
+        else if (node.left==null&&node.right==null) return node.data;
+           else{
+               aux = getLeaf(node.left);
+               if(aux==null) aux = getLeaf(node.right);
+
+        }
+        return aux;
+    }
+
+
 
     @Override
     public int height(Object element) throws TreeException {

@@ -22,7 +22,12 @@ class BTreeTest {
                                 : "The value [" + value + "] does not in the binary tree"
 
                 );
+                if(bTree.contains(value)){
+                    bTree.remove(value);
+                    System.out.println("The value [" + value + "] has been removed");
+                }
             }
+            System.out.println(bTree);
         } catch (TreeException e) {
             throw new RuntimeException(e);
         }
