@@ -35,6 +35,8 @@ public interface Tree {
     public int height() throws TreeException;
     //private int height(BTreeNode node)
 
+    int height(BTreeNode node, Object element, int level) throws TreeException;
+
     //devuelve el valor mínimo contenido en el árbol
     public Object min() throws TreeException;
     //private Object min(BTreeNode node)
