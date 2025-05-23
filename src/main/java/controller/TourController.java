@@ -1,64 +1,31 @@
 package controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 
 public class TourController {
 
     @FXML
-    private Button ClearButton;
+    private Button btnInOrder;
 
     @FXML
-    private Button CreateButton;
+    private Button btnPostOrder;
 
     @FXML
-    private Button RamdomizeButton;
+    private Button btnPreOrder;
 
     @FXML
-    private TableView<?> SortedArrayableView1;
+    private Button btnRandomize;
 
     @FXML
-    private Button StartButton;
+    private Label lblSubTitle;
 
     @FXML
-    private TextField TextFieldArrayLength;
+    private Label lblTourTitle;
 
     @FXML
-    private TextField TextFieldChanges;
-
-    @FXML
-    private TextField TextFieldHghBound;
-
-    @FXML
-    private TextField TextFieldLowBound;
-
-    @FXML
-    private TextField TextFielditerations;
-
-    @FXML
-    private TableView<?> noSortedArrayableView;
-
-    @FXML
-    void clearOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void createOnActio(ActionEvent event) {
-
-    }
-
-    @FXML
-    void randomizeOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void startOnAction(ActionEvent event) {
-
-    }
+    private Pane treePane;
 
 }

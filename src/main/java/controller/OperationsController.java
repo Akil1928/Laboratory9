@@ -1,64 +1,30 @@
 package controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 
 public class OperationsController {
 
     @FXML
-    private Button ClearButton;
+    private Button btnAdd;
 
     @FXML
-    private Button CreateButton;
+    private Button btnContains;
 
     @FXML
-    private Button RamdomizeButton;
+    private Button btnNodeHeight;
 
     @FXML
-    private TableView<?> SortedArrayableView1;
+    private Button btnRandomize;
 
     @FXML
-    private Button StartButton;
+    private Button btnRemove;
 
     @FXML
-    private TextField TextFieldArrayLength;
+    private Button btnTreeHeight;
 
     @FXML
-    private TextField TextFieldChanges;
-
-    @FXML
-    private TextField TextFieldHghBound;
-
-    @FXML
-    private TextField TextFieldLowBound;
-
-    @FXML
-    private TextField TextFielditerations;
-
-    @FXML
-    private TableView<?> noSortedArrayableView;
-
-    @FXML
-    void clearOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void createOnActio(ActionEvent event) {
-
-    }
-
-    @FXML
-    void randomizeOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void startOnAction(ActionEvent event) {
-
-    }
+    private Pane treePane;
 
 }

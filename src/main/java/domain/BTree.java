@@ -139,6 +139,11 @@ root = remove(root, element);
     }
 
     @Override
+    public int height(BTreeNode node, Object element, int level) throws TreeException {
+        return 0;
+    }
+
+    @Override
     public Object min() throws TreeException {
         return null;
     }
